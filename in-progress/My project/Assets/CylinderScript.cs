@@ -33,3 +33,33 @@ public class CylinderScript : MonoBehaviour
         }
     }
 }
+
+public GameObject cameraObject;
+
+float forwardSpeed = 20f;
+float xRotationSpeed = 90f;
+float yRotationSpeed = 90f;
+
+
+// its all inside of update in the planescript
+// float haxis = Input.GetAxis('Horizontal');
+// float vaxis = Input.GetAxis('Vertical');
+
+// Vector amountToRotate = new Vector3(0,0,0);
+amountToRotate.x = vaxis * xRotationSpeed;
+amountToRotate.y = hAxis * yRotationSpeed;
+amounntToRotate *= Time.deltaTime;
+transform.Rotate(amountToRotate, Space.Self);
+
+transform.position += transform.forward * forwardSpeed * Time.deltaTime;
+
+Vector3 cameraPosition = transform.positionl
+cameraPosition += -transform.forward * 10f;
+cameraPosition += Vector3.up * 8f;
+cameraObject.transform.position = cameraPosition;
+
+cameraObject.transform.LookAt(transform.position);
+
+create a Gamemanager object 
+
+
